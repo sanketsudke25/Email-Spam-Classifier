@@ -1,6 +1,5 @@
 import streamlit as st
 import pickle
-import spacy
 
 # Load saved files
 model = pickle.load(open("spam_model.pkl", "rb"))
@@ -26,6 +25,6 @@ if st.button("Predict"):
     prediction = model.predict(input_data)
     
     if prediction[0] == "spam":
-        st.error("🚨 This is Spam Email")
+        st.error("This is Spam Email")
     else:
-        st.success("✅ This is Not Spam")
+        st.success("This is Not Spam")
